@@ -2,24 +2,24 @@
 
 ## The Neural Network
 
-This neural network predicts the score of two national soccer/football teams based on their respective FIFA ranking positions. The model takes an input list consisting of [*FIFA ranking of country 1*, *FIFA ranking of country 2]. Since the model only predicts binary categorical values, the model uses a binary crossentropy loss function and has 1 output neuron. The model uses a standard Adam optimizer with a learning rate of 0.001 and multiple dropout layers to prevent overfitting. The model has an architecture consisting of:
+This neural network predicts the score of two national soccer/football teams based on their respective FIFA ranking positions. The model takes an input list consisting of the FIFA rankings of each national team ([[*FIFA_ranking_first_national_team*, *FIFA_ranking_second_national_team*]]) and outputs a corresponding list consisting of the score of the first inputted team and the score of the second inputted team ([[*score_first_national_team*, *score_second_national_team*]]). Since the model is a regression algorithm that predicts two outputs, the model uses a standard mean squared error loss function and has 2 output neurons. The model uses a standard Adam optimizer with a learning rate of 0.001 and has an architecture consisting of:
 - 1 Batch Normalization layer
-- 1 Input layer (with 64 input neurons and a ReLU activation function)
-- 4 Hidden layers (3 with 128 neurons and one with 256 neurons, each with a ReLU activation function)
-- 2 Dropout layers (one after the first hidden layer and one after the last hidden layer, each with a dropout rate of 0.3)
-- 1 Output layer (with 1 output neuron and a sigmoid activation function)
+- 1 Input layer (with 2 input neurons and a ReLU activation function)
+- 1 Hidden layer (with 1 neuron with a ReLU activation function)
+- 1 Output layer (with 2 output neuron and a ReLU activation function)
 
 Feel free to further tune the hyperparameters or build upon the model!
 
 ## The Dataset
-The dataset can be found at this link: https://www.kaggle.com/datasets/rashikrahmanpritom/heart-attack-analysis-prediction-dataset?resource=download&select=heart.csv. Credit for the dataset collection goes to **Naman Manchanda**, **Durgance Gaur**, **Fahad Mehfooz** and others on *Kaggle*. It describes whether or not a heart attack is likely (encoded as 0 or 1) based on multiple factors, including:
-- Age
-- Number of major vessels (0-3)
-- Type of chest pain (0 : typical angina, 1 : atypical angina, 2 :  non-anginal pain, 3 : asymptomatic) 
-- Cholesterol
-- Maximum achieved heart rate
+The dataset can be found at this link: https://www.kaggle.com/datasets/rashikrahmanpritom/heart-attack-analysis-prediction-dataset?resource=download&select=heart.csv. Credit for the dataset collection goes to **Brenda_L**, **Rodrigo Alencar**, **SolomonYolo** and others on *Kaggle*. It contains a large amount of information pertaining to international matches, but the only factors used in this neural network are:
+- Home team's FIFA rank
+- Away team's FIFA rank
+- Home team score
+- Away team score
+Naturally, a team's FIFA rank is not a perfect indicator of a match's score, and FIFA's rankings themselves are typically somewhat subjective. As a result there is not a perfect correlation between the inputs and the outputs the model is fed, so the network is by no means perfect — it tends to have an accuracy that hovers around 72%. Nonetheless, it is an interesting exercise in regression and sports prediction.
 
-A full description of all included features can be found on the dataset's webpage. Note that the initial dataset is biased (this statistic can be found on the data's webpage); it contains a higher representation of heart attack cases (encoded as 1's in this model) than non-heart attack cases (encoded as 0's in this model). This issue is addressed within the classifier file using  Imbalanced-Learn's **SMOTE()**, which oversamples the minority class within the dataset. Also, note that the data is scaled with Scikit-Learn's **StandardScaler()** before being fed into the model. 
+## Using the Model for Prediction
+At the end of the file is a function **display_predictions**, which can be used to see what the model predicts the output of a match will be. To use the function, change the inputted parameters in the file to the first country, the second country, the first country's FIFA rank, and then the second country's FIFA rank. FIFA rankings can be found here (the model uses the "Pos" column as inputs): . Printing the output of the function will allow one to view the model's predicted scores for that match. 
 
 ## Libraries
 This neural network was created with the help of the Tensorflow, Imbalanced-Learn, and Scikit-Learn libraries.
@@ -27,8 +27,3 @@ This neural network was created with the help of the Tensorflow, Imbalanced-Lear
 - Tensorflow Installation Instructions: https://www.tensorflow.org/install
 - Scikit-Learn's Website: https://scikit-learn.org/stable/
 - Scikit-Learn's Installation Instructions: https://scikit-learn.org/stable/install.html
-- Imbalanced-Learn's Website: https://imbalanced-learn.org/stable/about.html
-- Imbalanced-Learn's Installation Instructions: https://pypi.org/project/imbalanced-learn/
-
-## Disclaimer
-Please note that I do not recommend, endorse, or encourage the use of any of my work here in actual medical use or application in any way. 
