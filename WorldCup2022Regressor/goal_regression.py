@@ -107,7 +107,7 @@ def display_predictions(country1, country2, fifa_ranking1, fifa_ranking2):
   pred = model.predict([[fifa_ranking1, fifa_ranking2]])
   score1 = round(pred[0][0])
   score2 = round(pred[0][1])
-  text = f"\nPredicted Score in a Match Between {country1} (FIFA Ranking of {fifa_ranking1}) and {country2} (FIFA Ranking of {fifa_ranking2}): {country1} ({score1}), {country2} ({score2})"
+  text = f"\nPredicted Score in a Match Between {country1} (FIFA Ranking of {fifa_ranking1}) and {country2} (FIFA Ranking of {fifa_ranking2}): {country1} Scores {score1} Goal/s, {country2} Scores {score2} Goal/s."
   return text
 
 # Get a match prediction (change the countries and their corresponding FIFA rankings to get a prediction for a different match)
