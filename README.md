@@ -11,7 +11,7 @@ This neural network predicts the score of two national soccer/football teams bas
 Feel free to further tune the hyperparameters or build upon the model!
 
 ## The Dataset
-The dataset can be found at this link: https://www.kaggle.com/datasets/rashikrahmanpritom/heart-attack-analysis-prediction-dataset?resource=download&select=heart.csv. Credit for the dataset collection goes to **Brenda_L**, **Rodrigo Alencar**, **SolomonYolo** and others on *Kaggle*. It contains a large amount of information pertaining to international matches, but the only factors used in this neural network are:
+The dataset can be found at this link: https://www.kaggle.com/datasets/brenda89/fifa-world-cup-2022. Credit for the dataset collection goes to **Brenda_L**, **Rodrigo Alencar**, **SolomonYolo** and others on *Kaggle*. It contains a large amount of information pertaining to international matches, but the only factors used in this neural network are:
 - Home team's FIFA rank
 - Away team's FIFA rank
 - Home team score
