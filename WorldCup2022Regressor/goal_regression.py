@@ -1,5 +1,4 @@
 # Imports
-from re import X
 import tensorflow as tf
 from tensorflow.keras.layers import Dense, BatchNormalization, Dropout, LSTM
 from tensorflow.keras.models import Sequential
