@@ -112,4 +112,4 @@ def display_predictions(country1, country2, fifa_ranking1, fifa_ranking2):
   text = f"\nPredicted Score in a Match Between {country1} (FIFA Ranking of {fifa_ranking1}) and {country2} (FIFA Ranking of {fifa_ranking2}): {country1} ({score1}), {country2} ({score2})"
   return text
 
-print(display_predictions("Belgium", "Canada", 2, 41))
+print(display_predictions("Argentina", "Mexico", 3, 13))
