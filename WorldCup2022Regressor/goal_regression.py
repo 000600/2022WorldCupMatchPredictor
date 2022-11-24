@@ -1,6 +1,6 @@
 # Imports
 import tensorflow as tf
-from tensorflow.keras.layers import Dense, BatchNormalization, Dropout, LSTM
+from tensorflow.keras.layers import Dense, BatchNormalization
 from tensorflow.keras.models import Sequential
 from tensorflow.keras.callbacks import EarlyStopping
 from tensorflow.keras.optimizers import Adam
@@ -36,7 +36,6 @@ for game in df_list:
   # Output is list: [country1's goals, country2's goals] 
   y.append([game[4], game[5]])
 
-
 # Get and split the data
 x_train, x_test, y_train, y_test = train_test_split(np.array(x), np.array(y), test_size = 0.2, random_state = 1)
 
@@ -49,8 +48,8 @@ opt = Adam(learning_rate = 0.001)
 # Create model
 model = Sequential()
 
-# Input layer
-model.add(BatchNormalization())
+# Input layers
+model.add(BatchNormalization()) # Add a batch normalization layer to normalize values into a reasonable range
 model.add(Dense(2, activation = 'relu', input_shape = [input_shape]))
 
 # Hidden layers
