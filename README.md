@@ -19,7 +19,7 @@ The dataset can be found at this link: https://www.kaggle.com/datasets/brenda89/
 Naturally, a team's FIFA rank is not a perfect indicator of a match's score, and FIFA's rankings themselves are typically somewhat subjective. As a result there is not a perfect correlation between the inputs and the outputs the model is fed, so the network is by no means perfect — it tends to have an accuracy that hovers around 72%. Nonetheless, it is an interesting exercise in regression and sports prediction.
 
 ## Using the Model for Prediction
-At the end of the file is a function **display_predictions**, which can be used to see what the model predicts the output of a match will be. To use the function, change the inputted parameters in the file to the first country, the second country, the first country's FIFA rank, and then the second country's FIFA rank. FIFA rankings can be found here (the model uses the "Pos" column as inputs): . Printing the output of the function will allow one to view the model's predicted scores for that match. 
+At the end of the file is a function **display_predictions**, which can be used to see what the model predicts the output of a match will be. To use the function, change the inputted parameters in the file to the first country, the second country, the first country's FIFA rank, and then the second country's FIFA rank. FIFA rankings can be found here (the model uses the far left column as inputs): https://www.fifa.com/fifa-world-ranking/men?dateId=id13792. Printing the output of the function will allow one to view the model's predicted scores for that match. 
 
 ## Libraries
 This neural network was created with the help of the Tensorflow, Imbalanced-Learn, and Scikit-Learn libraries.
